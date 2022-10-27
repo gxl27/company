@@ -3,21 +3,15 @@ let main = document.querySelector('main');
 let banner = document.querySelector('#banner');
 let headerBar = document.querySelector('body > header');
 let logo = document.querySelector('#logo');
-let recipeNew = document.querySelector('#recipe-new');
-let recipeEdit = document.querySelector('#recipe-edit');
-let btnRecipeAdd = document.querySelector('#btn-recipe-add');
-let btnRecipeDetails = document.querySelectorAll('.btn-recipe-details');
-
-let closeBtn = document.querySelectorAll('.close-btn');
 
 // main.style.visibility = 'visible';
 // body.style.visibility = 'hidden';
 document.addEventListener("DOMContentLoaded", function(){
-    if(main){
-        main.style.visibility = 'visible';
-        main.style.opacity = '1';
+    // if(main){
+    //     main.style.visibility = 'visible';
+    //     main.style.opacity = '1';
 
-    }
+    // }
 
 });
 
@@ -51,10 +45,10 @@ if (matchMedia) {
     }else{
           // phone
         window.device = false;
-        if(banner){
-            banner.style.display = 'none';
+        // if(banner){
+        //     banner.style.display = 'none';
 
-        }
+        // }
     }
 
 }
@@ -91,31 +85,5 @@ function scrollUpScreen(){
             }
             upScreen.style.display = 'none'
         }
-    })
-}
-
-// show the new recipe form
-if(btnRecipeAdd){
-    btnRecipeAdd.addEventListener('click', function(){
-        recipeNew.style.display = "block";
-    })
-}
-
-// show the edit recipe form
-if(btnRecipeDetails){
-    btnRecipeDetails.forEach(function(element){
-        element.addEventListener('click', function(){
-            recipeEdit.style.display = "block";
-        })
-    })
-}
-
-// close the parent window
-if(closeBtn){
-    closeBtn.forEach(function(element){
-        element.addEventListener('click', function(){
-            let parentNode = element.parentNode.parentNode.parentNode;
-            parentNode.style.display = "none";
-        })
     })
 }

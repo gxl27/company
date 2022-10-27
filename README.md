@@ -1,4 +1,4 @@
-# Company (Laravel 8)
+# Company (Laravel 8 + VueJS 3)
 
 Company website, with administration section
 
@@ -14,7 +14,7 @@ Company website, with administration section
 
 ## Install
 
-For installation, it requires composer package management.
+For installation, it requires composer package management and npm
 
 So clone the repository and install the package with composer.
 
@@ -32,11 +32,16 @@ For the key configuration, use the command "php artisan key:generate"
 
 ## Database
 
-> :warning: **The repository contains a demonstrative database, .env file needs to be change with your credentials** 
-
 After install, make sure you have a database connection and change the .env file with your user and password.
+Create 'company' database and run the migrations
+
+Run the migrations "php artisan migrate"
+
+Also, check database/seeders/DatabaseSeeder.php and uncomment the model that you want to generate fake data.
+
+Run database seeders "artisan db:seed"
 
 
 ## Credentials
 
-Now the instalation it's complete and the administration area (/admin) can be accessed.
+Now the instalation is complete and the administration area (/admin) can be accessed.

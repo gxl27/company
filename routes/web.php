@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Admin\EmployeeController as AdminEmployeeController;
+use App\Http\Controllers\DepartamentController;
+use App\Http\Controllers\Admin\DepartamentController as AdminDepartamentController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -19,20 +22,21 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Show Register/Create Form
+// Auth
 Route::get('/register', [AuthController::class, 'create'])->name('register')->middleware('guest');
-
-// Create New User
 Route::post('/auth', [AuthController::class, 'store']);
-
-// Log User Out
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
-
-// Show Login Form
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
-
-// Log In User
 Route::post('/auth/authenticate', [AuthController::class, 'authenticate']);
 
-// this should be in the api file, but the middleware are not working there
-Route::get('/api/category', [CategoryController::class, 'index'])->name('category')->middleware('auth');
+// employees table
+Route::get('/employee', [EmployeeController::class, 'index'])->name('employee_index');
+
+// departament table
+Route::get('/departament', [DepartamentController::class, 'index'])->name('departament_index');
+
+// admin employees table
+Route::get('/admin/employee', [AdminEmployeeController::class, 'index'])->name('admin_employee')->middleware('auth');
+
+// admin departament table
+Route::get('/admin/departament', [AdminDepartamentController::class, 'index'])->name('admin_departament')->middleware('auth');

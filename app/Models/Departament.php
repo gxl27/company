@@ -26,6 +26,12 @@ class Departament extends Model
 
     public $timestamps = false;
 
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
+
     public function employees(){
         return $this->hasMany(Employee::class)->orderBy('nume');
      }

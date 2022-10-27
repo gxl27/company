@@ -25,8 +25,41 @@ a, img {
     @extend %unselect;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 img {
     max-width: 100%;
+}
+
+table td, table th {
+    max-width:150px;
+    text-align: center;
+    padding:10px;
+}
+#employees_table, #departaments_table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top:30px;
+    padding-bottom: 45px;
+}
+
+input {
+    border:1px solid #dee2e6;
+    text-align: center;
+}
+
+.table-td-description{
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -88,22 +121,6 @@ top:0;
     max-width: 150px;
 }
 
-.close-btn {
-    position: absolute;
-    top:50px;
-    right:50px;
-    cursor:pointer;
-    color:rgb(226, 51, 51);
-    transition: all .3 ease;;
-}
-.close-btn:hover {
-    color:red;
-}
-
-.fa-circle-xmark {
-    font-size: 38px;
-}
-
 #banner {
     position: relative;
     @extend %unselect;
@@ -111,146 +128,34 @@ top:0;
     .banner-text {
         display: flex;
         flex-direction: column;
+        align-items: center;
         position:absolute;
         top:50%;
         left:50%;
         transform: translate(-50%, -50%);
         z-index:3;
         gap:40px;
+        border-radius: 10px;
+        padding:35px 55px;
+        background-color: white;
+        box-shadow: 0 0 2px 1px rgba(24, 24, 24, 0.24);
 
-        span {
-            display: flex;
-            font-weight: 500;
-            font-size: 30px;
-            line-height: 25px;
-            letter-spacing: 0.01em;
-            color: config.$primary-color;
-            text-shadow: -1px -1px 0 #d1c17b, 1px -1px 0 #d1c17b, -1px 1px 0 #d1c17b, 1px 1px 0 #d1c17b;
-        }
-
-        span:nth-of-type(1) {
-
-            font-weight: 700;
-            font-size: 60px;
-            line-height: 75px;
-            letter-spacing: 0.05em;
-            color: rgb(20, 20, 20);
-            text-shadow: -1px -1px 0 #575757, 1px -1px 0 #575757, -1px 1px 0 #575757, 1px 1px 0 #575757;
+        img {
+            width: 250px;
+            
         }
     }
 
-    #spoon {
-        position:absolute;
-        bottom:0;
-        left:50%;
-        transform: translate(-50%, +50%);
-        z-index:3;
-        max-width: 65px;
+    > img {
+        min-height: 600px;
+        opacity: 0;
     }
+
 }
 
 #app {
     padding-top:95px;
     background-color: white;
-}
-
-.category-list {
-    display: flex;
-    flex-direction: row;
-    padding:10px;
-    font-size: 18px;
-    letter-spacing: .08em;
-    justify-content: space-around;
-    text-transform: capitalize;
-    font-weight: 500;
-
-    span {
-        display: block;
-        position:relative;
-        cursor: pointer;
-        background-color: transparent;
-        transition: all .3s ease;
-    }
-
-    span:hover {
-        color:rgb(0, 0, 0);
-    }
-
-    span.category-active::after {
-        content: "";
-        position: absolute;
-        width: 98%;
-        height:6px;
-        top:-15px;
-        left:0;
-        background-color: config.$primary-color;
-        border-radius: 85px;
-        
-    }
-}
-
-.recipes-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:45px;
-    margin-bottom:45px;
-    gap: 35px;
-   
-    .recipes-list-item {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding:30px 40px;
-        margin:15px;
-        max-width: 400px;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-        transition: all .3s ease;
-        cursor: pointer;
-    }
-
-    .recipes-list-item:hover {
-        box-shadow: 0px 1px 6px 0px rgba(26, 87, 7, 0.25);
-    }
-
-    .recipes-list-item-title {
-        font-weight: bold;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    img {
-        max-width: 300px;
-        max-height: 200px;
-    }
-    .recipes-list-item-subimg {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 16px;
-
-        > div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap:5px;
-
-        }
-    }
-}
-
-#recipe-new, #recipe-edit {
-    display: none;
-    position: fixed;
-    top:70px;
-    left:50%;
-    transform: translateX(-50%);
-    z-index: 800;
-    min-height: calc(100vh - 70px);
-    padding-top:65px;
 }
 
 

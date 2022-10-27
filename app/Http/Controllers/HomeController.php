@@ -4,23 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Departament;
 use App\Models\Employee;
-use App\Models\Recipe;
 use App\Services\GlobalSettings\GlobalSettings;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
   
-    public function index() {
+    public function index(Request $request) {
 
-        // $departaments = Departament::paginate(GlobalSettings::ITEMS_PER_PAGE)->sortBy('nume');
-        $employees = Employee::where('status', 1)->with('departament')->orderByRaw("nume, prenume")->paginate(GlobalSettings::ITEMS_PER_PAGE);
-        // $recipe = Recipe::with('directions')->with('ingredients')->latest()->first();
+        $employees = Employee::query()->active();
+        $employeesCount = $employees->count();
 
-        // $recipe = Recipe::with('directions')->with('ingredients')->latest()->first();
+        $departaments = Departament::query()->active();
+        $departamentsCount = $departaments->count();
 
         return view('index', [
-            // 'departaments' => $departaments,
-            'employees' => $employees,
+            
+            'employeesCount' => $employeesCount,
+            'departamentsCount' => $departamentsCount,
      
         ]
     );

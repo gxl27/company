@@ -1,8 +1,12 @@
 @media (min-width: 768px) {
 
     .logo {
-        width: 250px;
+        width: 180px;
         max-width: unset;
+    }
+
+    main {
+        padding-top:80px;
     }
 
     #app {
@@ -10,11 +14,10 @@
         background-color: white;
     }
 
-    .recipes-list {
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-
+    #banner {
+        img {
+            opacity: 1;
+        }
     }
 
 }

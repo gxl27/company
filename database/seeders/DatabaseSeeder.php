@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         // // departament and employee models
         // $departaments = Departament::factory(4)->create();
-        $employees = Employee::factory(10000)->create();
+        // $employees = Employee::factory(10000)->create();
 
     }
 }
