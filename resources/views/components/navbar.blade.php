@@ -4,7 +4,7 @@
     <ul class="flex space-x-3 space-x-12 md:space-x-10 mr-6 text-sm">
       @auth
       <li>
-        <a href="{{route('admin_employee')}}">
+        <a href="{{route('home')}}">
           <span class="lowercase primary-color">
             <i class="fa-solid fa-user md:inline-block"></i> <span class='mx-1 hidden md:inline-block'>Panou ({{auth()->user()->name}})</span>
           </span>

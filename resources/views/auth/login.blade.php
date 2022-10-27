@@ -1,8 +1,7 @@
 <x-layout>
     <x-card class="p-10 max-w-lg mx-auto mt-24">
-      <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-1">Login</h2>
-        <p class="mb-4">Create an account for food-recipes</p>
+      <header class="text-center my-6">
+        <h2 class="text-2xl font-bold uppercase mb-1 primary-color">Login</h2>
       </header>
   
       <form method="POST" action="/auth/authenticate">
@@ -19,7 +18,7 @@
   
         <div class="mb-6">
           <label for="password" class="inline-block text-lg mb-2">
-            Password
+            Parola
           </label>
           <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password"
             value="{{old('password')}}" />
@@ -29,16 +28,16 @@
           @enderror
         </div>
   
-        <div class="mb-6">
-          <button class="primary-color-bg text-white rounded py-2 px-4">
-            Sign In
+        <div class="py-6 w-full flex justify-center">
+          <button class="primary-color-bg text-white rounded py-2 px-4 w-full">
+            Login
           </button>
         </div>
   
-        <div class="mt-8">
+        <div class="mb-4 text-center">
           <p>
-            Don't have an account?
-            <a href="/register" class="text-laravel">Register</a>
+            Nu ai un cont?
+            <a href="/register" class="text-blue-500">Register</a>
           </p>
         </div>
       </form>
